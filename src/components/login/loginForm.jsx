@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
 import "./loginForm.scss";
 import { useNavigate } from "react-router-dom";
 
@@ -13,12 +14,21 @@ function LoginForm() {
     function handleSubmit(event) {
         event.preventDefault();
         axios
-            .post("http://localhost:8080/user/login", {
-                userName: formData.userName,
-                password: formData.password,
-            })
+            .post(
+                "http://localhost:8080/user/login",
+                {
+                    userName: formData.userName,
+                    password: formData.password,
+                },
+                {
+                    withCredentials: true,
+                },
+            )
             .then(function (response) {
                 console.log(response);
+                const token = Cookies.get("jwt");
+                console.log(token);
+                navigate("/");
             })
             .catch(function (error) {
                 console.log(error);

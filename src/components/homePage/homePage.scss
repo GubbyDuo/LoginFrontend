@@ -1,5 +1,16 @@
 .homePage {
     margin-top: 50px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+
+    &--Button {
+        margin: 10px;
+    }
+}
+
+.loginRegister {
+    display: flex;
+    flex-direction: row;
 }

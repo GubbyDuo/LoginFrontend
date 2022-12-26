@@ -24,6 +24,7 @@ function RegisterForm() {
             })
             .then(function (response) {
                 console.log(response);
+                localStorage.setItem("Token", response);
                 navigate("/");
             })
             .catch(function (error) {
