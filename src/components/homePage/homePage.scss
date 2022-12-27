@@ -14,3 +14,13 @@
     display: flex;
     flex-direction: row;
 }
+
+.profile {
+    display: flex;
+    margin: 50px;
+    &--picture {
+        margin-left: 20px;
+        width: 60px;
+        height: 60px;
+    }
+}

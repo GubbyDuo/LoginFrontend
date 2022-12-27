@@ -3,7 +3,6 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import jwt from "jsonwebtoken";
 import "./homePage.scss";
 import Cookies from "js-cookie";
-import { UserContext } from "../../App";
 
 function Home() {
     const [userName, setUserName] = useState(null);
@@ -32,7 +31,28 @@ function Home() {
 
     return (
         <div className="homePage">
-            <div>{userName ? userName : "No name Found"}</div>
+            <div className="profile">
+                <p>
+                    {userName ? "Logged in as: " + userName : "Not logged in"}
+                </p>
+                {userName ? (
+                    <div>
+                        <img
+                            src="/images/profile_pictures/placeholder.jpg"
+                            className="profile--picture"
+                        />
+                        <NavLink
+                            className="homePage--Button"
+                            to={{
+                                pathname: "./profile",
+                            }}
+                            state={{ userName }}
+                        >
+                            <p>Profile</p>
+                        </NavLink>
+                    </div>
+                ) : null}
+            </div>
             <div className="loginRegister">
                 <NavLink className="homePage--Button" to={"./login"}>
                     <p>Login</p>
