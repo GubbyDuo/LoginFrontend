@@ -2,8 +2,10 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import "./profile.scss";
 import Dropzone, { useDropzone } from "react-dropzone";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
+    const navigate = useNavigate();
     const location = useLocation();
     const { getRootProps, getInputProps, acceptedFiles } = useDropzone();
 
@@ -21,6 +23,9 @@ function Profile() {
                     <input {...getInputProps()} />
                     <p>Change Profile Picture</p>
                 </div>
+            </div>
+            <div>
+                <button onClick={() => navigate("/")}>Home</button>
             </div>
         </div>
     );

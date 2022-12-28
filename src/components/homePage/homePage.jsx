@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import jwt from "jsonwebtoken";
 import "./homePage.scss";
 import Cookies from "js-cookie";
+import { userContext } from "../../App";
 
 function Home() {
-    const [userName, setUserName] = useState(null);
+    const [userName, setUserName] = useContext(userContext);
 
     function logOut() {
         Cookies.remove("jwt");
