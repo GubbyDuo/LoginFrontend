@@ -13,7 +13,7 @@ export const userContext = createContext();
 function App() {
     const [userName, setUserName] = useState(null);
     return (
-        <div>
+        <div className="App">
             <userContext.Provider value={[userName, setUserName]}>
                 <BrowserRouter>
                     <Routes>

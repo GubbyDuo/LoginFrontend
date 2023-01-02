@@ -38,9 +38,9 @@ function RegisterForm() {
     };
 
     return (
-        <div className="registerForm">
-            <form onSubmit={handleSubmit}>
-                <label>
+        <div className="registerBody">
+            <form className="registerForm" onSubmit={handleSubmit}>
+                <label for="Username">
                     Username:
                     <input
                         type="text"
@@ -50,7 +50,7 @@ function RegisterForm() {
                     />
                 </label>
                 <br />
-                <label>
+                <label for="Password">
                     Password:
                     <input
                         type="password"
@@ -60,7 +60,7 @@ function RegisterForm() {
                     />
                 </label>
                 <br />
-                <label>
+                <label for="Email">
                     Email:
                     <input
                         type="email"
@@ -70,7 +70,7 @@ function RegisterForm() {
                     />
                 </label>
                 <br />
-                <label>
+                <label for="FirstName">
                     First Name:
                     <input
                         type="text"
@@ -81,6 +81,7 @@ function RegisterForm() {
                 </label>
                 <br />
                 <button type="submit">Register</button>
+                <br />
                 <button onClick={() => navigate("/")}>Home</button>
             </form>
         </div>

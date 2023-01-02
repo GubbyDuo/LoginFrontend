@@ -1,13 +1,22 @@
 .homePage {
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: aquamarine;
+    height: 100%;
 
     &--Button {
         margin: 10px;
     }
+}
+
+.bodyContainer {
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .loginRegister {

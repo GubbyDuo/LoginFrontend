@@ -41,8 +41,8 @@ function LoginForm() {
     };
 
     return (
-        <div className="loginForm">
-            <form onSubmit={handleSubmit}>
+        <div className="loginBody">
+            <form className="loginForm" onSubmit={handleSubmit}>
                 <label>
                     Username:
                     <input
@@ -64,6 +64,7 @@ function LoginForm() {
                 </label>
                 <br />
                 <button type="submit">Login</button>
+                <br />
                 <button onClick={() => navigate("/")}>Home</button>
             </form>
         </div>

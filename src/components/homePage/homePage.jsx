@@ -34,56 +34,58 @@ function Home() {
 
     return (
         <div>
-            <div className="nav">
-                <NavBar />
-            </div>
-            <div className="homePage">
-                <h2>Profile</h2>
-                <div className="profile">
-                    <div>
-                        {userName
-                            ? "Logged in as: " + userName
-                            : "Not logged in"}
+            <div className="bodyContainer">
+                <div className="nav">
+                    <NavBar />
+                </div>
+                <div className="homePage">
+                    <h2>Profile</h2>
+                    <div className="profile">
+                        <div>
+                            {userName
+                                ? "Logged in as: " + userName
+                                : "Not logged in"}
+                        </div>
+                        {userName ? (
+                            <div>
+                                <img
+                                    src="/images/profile_pictures/placeholder.jpg"
+                                    className="profile--picture"
+                                />
+                            </div>
+                        ) : null}
                     </div>
-                    {userName ? (
-                        <div>
-                            <img
-                                src="/images/profile_pictures/placeholder.jpg"
-                                className="profile--picture"
-                            />
-                        </div>
-                    ) : null}
-                </div>
-                <div>
-                    {userName ? (
-                        <NavLink to={"./editProfile"}>
-                            Change profile Picture
-                        </NavLink>
-                    ) : (
-                        ""
-                    )}
-                </div>
-                <div className="loginRegister">
-                    {userName ? (
-                        <div>
-                            <button onClick={logOut}>Logout</button>
-                        </div>
-                    ) : (
-                        <div className="loginRegister">
-                            <NavLink
-                                className="homePage--Button"
-                                to={"./login"}
-                            >
-                                <p>Login</p>
+                    <div>
+                        {userName ? (
+                            <NavLink to={"./editProfile"}>
+                                Change profile Picture
                             </NavLink>
-                            <NavLink
-                                className="homePage--Button"
-                                to={"./register"}
-                            >
-                                <p>Register</p>
-                            </NavLink>
-                        </div>
-                    )}
+                        ) : (
+                            ""
+                        )}
+                    </div>
+                    <div className="loginRegister">
+                        {userName ? (
+                            <div>
+                                <button onClick={logOut}>Logout</button>
+                            </div>
+                        ) : (
+                            <div className="loginRegister">
+                                <NavLink
+                                    className="homePage--Button"
+                                    to={"./login"}
+                                >
+                                    <p>Login</p>
+                                </NavLink>
+                                <NavLink
+                                    className="homePage--Button"
+                                    to={"./register"}
+                                >
+                                    <p>Register</p>
+                                </NavLink>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
