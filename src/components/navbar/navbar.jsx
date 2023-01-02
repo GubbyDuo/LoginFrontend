@@ -8,9 +8,9 @@ function NavBar() {
 
     return (
         <div className="navbar">
-            <div className="navbar--tab">Home</div>
-            <div className="navbar--tab">About</div>
-            <div className="navbar--tab">Other</div>
+            <div className="navbar--tab">Lorem</div>
+            <div className="navbar--tab">Ipsum</div>
+            <div className="navbar--tab">Dolor</div>
             <div className="navbar--tab navbar--tab--login">
                 <div>
                     {userName ? (

@@ -6,6 +6,7 @@ import Home from "./components/homePage/homePage";
 import Profile from "./components/profile/profile";
 import { createContext, useState } from "react";
 import NavBar from "./components/navbar/navbar";
+import EditProfile from "./components/editProfile/editProfile";
 
 export const userContext = createContext();
 
@@ -15,7 +16,6 @@ function App() {
         <div>
             <userContext.Provider value={[userName, setUserName]}>
                 <BrowserRouter>
-                    <NavBar />
                     <Routes>
                         <Route path="/" element={<Home />}></Route>
                         <Route path="/login" element={<LoginForm />}></Route>
@@ -24,6 +24,10 @@ function App() {
                             element={<RegisterForm />}
                         ></Route>
                         <Route path="/profile" element={<Profile />}></Route>
+                        <Route
+                            path="/editProfile"
+                            element={<EditProfile />}
+                        ></Route>
                     </Routes>
                 </BrowserRouter>
             </userContext.Provider>

@@ -12,20 +12,19 @@ function Profile() {
     return (
         <div className="profilePage">
             <div className="profile">
-                <div>Username: {location.state.userName}</div>
-                <img
-                    className="profile--picture"
-                    src="images/profile_pictures/placeholder.jpg"
-                ></img>
-            </div>
-            <div>
-                <div {...getRootProps({ className: "dropzone" })}>
-                    <input {...getInputProps()} />
-                    <p>Change Profile Picture</p>
+                <div>
+                    {location.state
+                        ? "Username:" + location.state.userName
+                        : "Not logged in"}
                 </div>
-            </div>
-            <div>
-                <button onClick={() => navigate("/")}>Home</button>
+                <div>
+                    {location.state ? (
+                        <img
+                            className="profile--picture"
+                            src="images/profile_pictures/placeholder.jpg"
+                        ></img>
+                    ) : null}
+                </div>
             </div>
         </div>
     );
