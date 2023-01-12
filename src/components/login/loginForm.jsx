@@ -26,8 +26,8 @@ function LoginForm() {
             )
             .then(function (response) {
                 console.log(response);
-                const token = Cookies.get("jwt");
-                console.log(token);
+                //const token = Cookies.get("jwt");
+                //console.log(token);
                 navigate("/");
             })
             .catch(function (error) {
